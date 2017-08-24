@@ -1,0 +1,14 @@
+<%= simple_form_for(@bulletin) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description, input_html: { rows: 5 } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-outline-primary' %>
+    <%= link_to 'Show', @bulletin, class: 'btn btn-outline-primary' if @bulletin.persisted? %>
+    <%= link_to 'List', bulletins_path, class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>
